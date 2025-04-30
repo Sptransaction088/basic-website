@@ -16,6 +16,7 @@ import {
   Facebook,
   Linkedin,
   Instagram,
+  LogIn,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -108,21 +109,6 @@ const PaymentSystemNavbar = () => {
         {
           title: "API Documentation",
           desc: "Comprehensive guides and references",
-          href: "#",
-        },
-        {
-          title: "SDKs & Libraries",
-          desc: "Tools for quick integration",
-          href: "#",
-        },
-        {
-          title: "Testing Environment",
-          desc: "Sandbox for development",
-          href: "#",
-        },
-        {
-          title: "Code Examples",
-          desc: "Sample implementations",
           href: "#",
         },
       ],
@@ -219,6 +205,14 @@ const PaymentSystemNavbar = () => {
                 <Instagram className="w-4 h-4 text-[#fff] group-hover:text-[#fbb735] transition-colors" />
               </a>
             </div>
+            {/* Added Login Link in the top bar */}
+            <Link
+              to="https://admin.sptransactionhub.com/login"
+              className="flex items-center text-sm group hover:text-[#fbb735] transition-colors"
+            >
+              <LogIn className="w-3 h-3 mr-1 text-[#fff] group-hover:text-[#fbb735] transition-colors" />
+              <span>Login</span>
+            </Link>
           </div>
         </div>
       </div>
@@ -357,6 +351,9 @@ const PaymentSystemNavbar = () => {
               >
                 <Search className="w-5 h-5" />
               </button>
+
+              {/* Login Button for Desktop */}
+
               <Link
                 to="/contact-us"
                 className="px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm transition-colors flex items-center"
@@ -372,6 +369,24 @@ const PaymentSystemNavbar = () => {
               >
                 <User className="w-4 h-4 mr-1.5" />
                 Enquiry Now
+              </Link>
+
+              <Link
+                to="https://admin.sptransactionhub.com/login"
+                className="px-4 py-2 text-sm font-medium rounded-md shadow-sm transition-colors flex items-center"
+                style={{
+                  color: "white",
+                  background: `linear-gradient(to right, ${colors.blue}, ${colors.purple})`,
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.background = `linear-gradient(to right, ${colors.purple}, ${colors.blue})`)
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.background = `linear-gradient(to right, ${colors.blue}, ${colors.purple})`)
+                }
+              >
+                <LogIn className="w-4 h-4 mr-1.5" />
+                Login
               </Link>
             </div>
 
@@ -553,6 +568,8 @@ const PaymentSystemNavbar = () => {
                 </div>
               ))}
               <div className="pt-2 flex flex-col space-y-2">
+                {/* Login Button for Mobile */}
+
                 <Link
                   to="/contact-us"
                   className="flex items-center justify-center py-2.5 px-4 text-white rounded-md shadow-sm transition-colors"
@@ -569,6 +586,24 @@ const PaymentSystemNavbar = () => {
                 >
                   <User className="w-4 h-4 mr-2" />
                   Enquiry Now
+                </Link>
+
+                <Link
+                  to="https://admin.sptransactionhub.com/login"
+                  className="flex items-center justify-center py-2.5 px-4 text-white rounded-md shadow-sm transition-colors"
+                  style={{
+                    background: `linear-gradient(to right, ${colors.blue}, ${colors.purple})`,
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.background = `linear-gradient(to right, ${colors.purple}, ${colors.blue})`)
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.background = `linear-gradient(to right, ${colors.blue}, ${colors.purple})`)
+                  }
+                  onClick={() => setIsOpen(false)}
+                >
+                  <LogIn className="w-4 h-4 mr-2" />
+                  Login
                 </Link>
               </div>
             </div>
