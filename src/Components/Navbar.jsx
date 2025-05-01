@@ -109,7 +109,9 @@ const PaymentSystemNavbar = () => {
         {
           title: "API Documentation",
           desc: "Comprehensive guides and references",
-          href: "#",
+          href: "https://docs.google.com/document/d/1EjAXl67OYd7VT37RFaWVDrsYYvHuAmIG5D_9DKmbzYQ/edit?tab=t.0#heading=h.zaqg8iwuogd7",
+          target: "_blank",
+          rel: "noopener noreferrer",
         },
       ],
     },
@@ -211,7 +213,7 @@ const PaymentSystemNavbar = () => {
               className="flex items-center text-sm group hover:text-[#fbb735] transition-colors"
             >
               <LogIn className="w-3 h-3 mr-1 text-[#fff] group-hover:text-[#fbb735] transition-colors" />
-              <span>Login</span>
+             
             </Link>
           </div>
         </div>
@@ -320,6 +322,8 @@ const PaymentSystemNavbar = () => {
                             <Link
                               key={index}
                               to={item.href}
+                              target={item.target || "_self"}
+                              rel={item.rel || ""}
                               className="block p-3 rounded-md hover:bg-blue-50 transition-colors"
                               onClick={() => handleDropdownItemClick(link.name)}
                             >
@@ -446,7 +450,9 @@ const PaymentSystemNavbar = () => {
                   <span className="font-medium">Quick Links:</span>
                   <div className="flex flex-wrap gap-2 mt-1">
                     <Link
-                      to="/developers/docs"
+                      to="https://docs.google.com/document/d/1EjAXl67OYd7VT37RFaWVDrsYYvHuAmIG5D_9DKmbzYQ/edit?tab=t.0#heading=h.zaqg8iwuogd7"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="px-3 py-1 bg-gray-100 rounded-full text-gray-700 hover:bg-purple-100 hover:text-purple-600 transition-colors"
                     >
                       API Documentation
@@ -521,6 +527,8 @@ const PaymentSystemNavbar = () => {
                             <Link
                               key={itemIdx}
                               to={item.href}
+                              target={item.target || "_self"}
+                              rel={item.rel || ""}
                               className="block py-2 px-2 text-sm border-b last:border-b-0 hover:text-purple-600"
                               style={{
                                 color: "#4B5563",
